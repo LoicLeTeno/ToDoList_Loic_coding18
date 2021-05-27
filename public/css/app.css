@@ -17,10 +17,48 @@ header {
     font-weight: bold;
 }
 
-
+#input {
+    text-align: center;
+}
 
 #button {
     display: flex;
     justify-content: center;
 }
 
+/* BUTTON FILTRE */
+.task_visible {
+    display: block;
+}
+.task_invisible {
+    display: none;
+}
+
+.task_fini_visible {
+    display: block;
+}
+.task_fini_invisible {
+    display: none;
+}
+
+/* BUTTON TRASH */
+.button_trash_visible {
+    display: block;
+}
+.button_trash_invisible {
+    display: none;
+}
+
+.oui_trash_visible {
+    display: block;
+}
+.oui_trash_invisible {
+    display: none;
+}
+
+.non_trash_visible {
+    display: block;
+}
+.non_trash_invisible {
+    display: none;
+}

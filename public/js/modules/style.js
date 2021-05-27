@@ -9,14 +9,14 @@ let button_valider = document.querySelector('#input').querySelector('button');
 console.log(button_valider);
 
 
-// ajouter tache
+
+// AJOUTER UNE TACHE
 let container = document.querySelector('.container');
 
 button_valider.addEventListener('click', () => {
-
     // DIV TASK
     let tache = document.createElement('div');
-    tache.className = "task";
+    tache.className = "task_visible";
     container.appendChild(tache);
 
 
@@ -44,8 +44,17 @@ button_valider.addEventListener('click', () => {
     button_finish.innerHTML = '<i class="far fa-check-circle"></i>';
     
     button_finish.addEventListener('click', () => {
-        tache.className = "task fini";
+        if (tache.className == "task_visible") {
+            tache.className = "task_fini_visible";
+            button_finish.innerHTML = '<i class="fas fa-check-circle"></i>';
+
+        } else {
+            tache.className = "task_visible"
+            button_finish.innerHTML = '<i class="far fa-check-circle"></i>';
+            console.log(tache.className);
+        }
     });
+
     div_button_task.appendChild(button_finish);
 
 
@@ -84,16 +93,19 @@ button_valider.addEventListener('click', () => {
 
         // button poubelle
     let button_trash = document.createElement('button');
+    button_trash.className = "button_trash_visible";
     button_trash.innerHTML = '<i class="fas fa-trash"></i>';
 
-    // button_trash.addEventListener('click', () => {
-
-    // });
+    button_trash.addEventListener('click', () => {
+        button_oui_trash.className = "oui_trash_visible";
+        button_non_trash.className = "non_trash_visible";
+        button_trash.className = "button_trash_invisible";
+    });
     div_button_task.appendChild(button_trash);
 
         // button oui-trash
     let button_oui_trash = document.createElement('button');
-    button_oui_trash.className = "oui_trash";
+    button_oui_trash.className = "oui_trash_invisible";
     button_oui_trash.innerHTML = "oui";
 
     button_oui_trash.addEventListener('click', () => {
@@ -103,15 +115,51 @@ button_valider.addEventListener('click', () => {
 
         // button non-trash
     let button_non_trash = document.createElement('button');
-    button_non_trash.className = "non_trash";
+    button_non_trash.className = "non_trash_invisible";
     button_non_trash.innerHTML = "non";
 
     button_non_trash.addEventListener('click', () => {
-
+        button_oui_trash.className = "oui_trash_invisible";
+        button_non_trash.className = "non_trash_invisible";
+        button_trash.className = "button_trash_visible";
     });
     div_button_task.appendChild(button_non_trash);
 
+    input_valider.value = "";
+
+        // BUTTON FILTRE
+    let tous_tache = document.querySelector('#button').querySelector('#tous_tache');
+    let tache_fini = document.querySelector('#button').querySelector('#tache_fini');
+    let tache_non_fini = document.querySelector('#button').querySelector('#tache_non_fini');
+
+    tous_tache.addEventListener('click', () => {
+        if (tache.className == "task_invisible") {
+            tache.className = "task_visible";
+
+        } else if (tache.className == "task_fini_invisible") {
+            tache.className = "task_fini_visible";
+        }
+    });
+
+    tache_fini.addEventListener('click', () => {
+        if (tache.className == "task_visible") {
+            tache.className = "task_invisible";
+
+        } else if (tache.className == "task_fini_invisible") {
+            tache.className = "task_fini_visible";
+        }
+    });
+
+    tache_non_fini.addEventListener('click', () => {
+        if (tache.className == "task_invisible") {
+            tache.className = "task_visible";
+
+        } else if (tache.className == "task_fini_visible") {
+            tache.className = "task_fini_invisible";
+        }
+    });
 });
 
 
 // FUNCTION BUTTON TASK
+
