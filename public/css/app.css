@@ -1,4 +1,4 @@
-
+/* CORP HTML */
 body {
     margin: 0;
     
@@ -8,34 +8,159 @@ header {
     display: flex;
     justify-content: center;
 
-    background-color: red;
+    background-color: rgb(0, 140, 255);
 }
 
 #titre {
     color: white;
-    font-size: 50px;
+
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 80px;
     font-weight: bold;
+
+    margin: 30px 0px;
 }
 
+/* INPUT CORP HTML */
 #input {
     text-align: center;
+
+    margin: 20px;
+}
+#input > input {
+    height: 30px;
+    font-size: 20px;
+}
+#input > button {
+    background-color: rgb(97, 97, 204);
+    color: white;
+
+    border: solid white 3px;
+    border-radius: 20px 20px 20px 20px;
+
+    width: 80px;
+    height: 30px;
+
+    margin-left: 10px;
+}
+#input > button:active {
+    color: black;
+    border: solid black 3px;
 }
 
+/* BUTTON CORP HTML */
 #button {
     display: flex;
     justify-content: center;
 }
+#button > input {
+    background-color: rgb(224, 224, 224);
+    border: none;
+    border-radius: 20px 20px 20px 20px;
 
-/* BUTTON FILTRE */
+    font-size: 20px;
+    font-weight: bold;
+
+    width: 100px;
+    height: 50px;
+    
+    margin: 50px 10px 10px;
+}
+#button > input:focus {
+    background-color: rgb(97, 97, 204);
+    color: white;
+}
+
+
+
+/* CORP JS */
+.container {
+    background-image: url(../img/noop.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* TACHE CORP JS */
+    /* TASK VISIBLE ET INVISIBLE*/
 .task_visible {
-    display: block;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: solid 1px black;
+
+    width: auto;
+    height:50px;
+
+    margin: 20px auto;
+}
+.title {
+    margin-left: 50px;
+}
+.title > p {
+    margin: 10px auto;
+
+    font-size: 20px;
+}
+.title > input {
+    margin: 10px auto;
+
+    font-size: 20px;
+}
+.ok {
+    background-color: rgb(97, 97, 204);
+    color: white;
+
+    border: solid white 3px;
+    border-radius: 20px 20px 20px 20px;
+
+    width: 80px;
+    height: 30px;
+
+    margin-left: 10px;
+}
+.ok:active {
+    border: solid black 3px;
+}
+.button_container {
+    display: flex;
+    
+    height: 50px;
+}
+.button_container > button {
+    background: none;
+    border: none;
+}
+.button_container > button:hover {
+    background-color: rgb(255, 0, 242);
+    color: white;
+}
+.button_container > button > i {
+    font-size: 20px;
+    width: 30px;
 }
 .task_invisible {
     display: none;
 }
 
+    /* TASK FINI VISIBLE ET INVISIBLE */
 .task_fini_visible {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: solid 1px white;
+    background-color: violet;
+
+    width: auto;
+    height: 50px;
+
+    margin: 20px auto;
 }
 .task_fini_invisible {
     display: none;
@@ -51,6 +176,8 @@ header {
 
 .oui_trash_visible {
     display: block;
+
+    font-weight: bold;
 }
 .oui_trash_invisible {
     display: none;
@@ -58,6 +185,8 @@ header {
 
 .non_trash_visible {
     display: block;
+
+    font-weight: bold;
 }
 .non_trash_invisible {
     display: none;
